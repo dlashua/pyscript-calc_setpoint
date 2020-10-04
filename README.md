@@ -6,7 +6,7 @@
 
 Many thermostats are not positioned in an ideal location to sense the temperature of the rooms you care about. This adjusts the setpoint according to that measured temperature and its difference from the temperature measured at the Thermostat.
 
-`calc_setpoint` can be used again any temperature sensor. 
+`calc_setpoint` can be used against any temperature sensor. 
 
 This could be a single sensor for a single room.
 
