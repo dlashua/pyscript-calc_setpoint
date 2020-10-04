@@ -1,0 +1,23 @@
+pyscript:
+  apps:
+    calc_setpoint:
+      - sensor_temp: climate.hvac.current_temperature
+        actual_temp: sensor.avg_occupied_temperature
+        occupied: binary_sensor.occupied
+        desired_temp: input_number.desired_temperature
+        away_temp: input_number.away_temperature
+        climate_entity: climate.hvac
+
+# OR
+
+pyscript:
+  apps:
+    calc_setpoint: {}
+  apps_list:
+    - app: calc_setpoint
+      sensor_temp: climate.hvac.current_temperature
+      actual_temp: sensor.avg_occupied_temperature
+      occupied: binary_sensor.occupied
+      desired_temp: input_number.desired_temperature
+      away_temp: input_number.away_temperature
+      climate_entity: climate.hvac
