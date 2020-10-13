@@ -133,6 +133,8 @@ def load_app_list(app_name, factory):
 ##########
 # Startup
 ##########
-load_app("calc_setpoint", register_calc_setpoint)
-load_app_list("calc_setpoint", register_calc_setpoint)
+@time_trigger('startup')
+def load():
+    load_app("calc_setpoint", register_calc_setpoint)
+    load_app_list("calc_setpoint", register_calc_setpoint)
 
