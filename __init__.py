@@ -10,7 +10,11 @@ def calc_setpoint(**data):
     if occupied_sensor is None:
         occupied = True
     else:
-        occupied = (state.get(occupied_sensor) == 'on')
+        try:
+            occupied = (state.get(occupied_sensor) == 'on')
+        except NameError as e:
+            log.error(f'{climate_entity}: occupied sensor in unknown state')
+            occupied = True
 
     desired_temp_sensor = data.get('desired_temp')
     if desired_temp_sensor is None:
